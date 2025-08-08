@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Happy Raksha Bandhan!</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #a8edea, #fed6e3);
+      color: #064663;
+      padding: 20px;
+      margin: 0;
+      text-align: center;
+    }
+    h1 {
+      font-size: 3em;
+      margin-bottom: 0.3em;
+      color: #054a91;
+    }
+    h2 {
+      color: #05668d;
+      margin-top: 0;
+    }
+    .sisters {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin: 30px 0;
+      flex-wrap: wrap;
+    }
+    .sister-card {
+      background: #e0f7fa;
+      border-radius: 15px;
+      padding: 20px;
+      width: 180px;
+      box-shadow: 3px 3px 10px rgba(0,0,0,0.1);
+      margin-bottom: 12px;
+    }
+    .sister-name {
+      font-size: 1.7em;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #0288d1;
+    }
+    .video-section {
+      margin: 40px auto 20px auto;
+      max-width: 330px;
+    }
+    .video-caption {
+      font-style: italic;
+      color: #444;
+      margin-top: 10px;
+    }
+    /* CSS Animation Brother & Sister */
+    .animation {
+      position: relative;
+      width: 320px;
+      height: 100px;
+      margin: 0 auto;
+    }
+    .sister, .brother {
+      position: absolute;
+      bottom: 0;
+      width: 48px;
+      height: 76px;
+      border-radius: 44% 50% 40% 47% / 49% 46% 49% 48%;
+      box-shadow: 0 2px 8px #ccc;
+    }
+    .sister {
+      left: 0;
+      background: linear-gradient(135deg, #ffe0ec 75%, #f9c2e1 100%);
+      border: 3px solid #e963ae;
+      animation: run-s 2s linear infinite;
+      z-index: 2;
+    }
+    .brother {
+      left: 60px;
+      background: linear-gradient(135deg, #c2e4fc 60%, #64b5f6 100%);
+      border: 3px solid #3747ed;
+      animation: run-b 2s linear infinite;
+      z-index: 1;
+    }
+    /* Face details */
+    .face, .hair {
+      position: absolute;
+      left: 14px; top: 11px;
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      background: #fcf2d6;
+      z-index: 3;
+    }
+    .hair {
+      background: #e963ae;
+      left: 13px; top: 8px; width: 22px; height: 10px;
+      border-radius: 70% 70% 50% 50% / 55% 55% 20% 20%;
+    }
+    .brother .face { background: #fcf2d6; }
+    .brother .hair {
+      background: #333;
+      left:13px; top:8px; width:20px; height:9px;
+    }
+    /* Smile */
+    .smile { position: absolute; left:20px; top:22px; width:10px; height:4px; border-radius:0 0 7px 7px; border-bottom:2px solid #cf65a9; }
+    .brother .smile { border-bottom:2px solid #555; }
+    /* Keyframes */
+    @keyframes run-s {
+      0%   { left: 0; }
+      80%  { left: 250px; }
+      100% { left: 0; }
+    }
+    @keyframes run-b {
+      0%   { left:60px;}
+      70%  { left:200px;}
+      100% { left:60px;}
+    }
+    .message-box {
+      margin-top: 35px;
+      font-size: 1.22em;
+      min-height: 70px;
+      transition: color 0.3s;
+    }
+    button {
+      background-color: #05668d;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 1em;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin-top: 18px;
+    }
+    button:hover {
+      background-color: #054a91;
+    }
+    footer {
+      margin-top: 48px;
+      font-size: 0.9em;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Happy Raksha Bandhan!</h1>
+<h2>Dear Honey and Noni,</h2>
+
+<div class="sisters">
+  <div class="sister-card">
+    <div class="sister-name">Honey</div>
+    <div>
+      May your days be as sweet as your name,<br>
+      filled with love, laughter, and endless joy.
+    </div>
+  </div>
+  <div class="sister-card">
+    <div class="sister-name">Noni</div>
+    <div>
+      Wishing you happiness that never ends,<br>
+      and dreams as bright as the Rakhi thread.
+    </div>
+  </div>
+</div>
+
+<div class="video-section">
+  <h3>Funny Raksha Bandhan Brother-Sister Chase!</h3>
+  <div class="animation">
+    <div class="sister">
+      <div class="hair"></div>
+      <div class="face"></div>
+      <div class="smile"></div>
+    </div>
+    <div class="brother">
+      <div class="hair"></div>
+      <div class="face"></div>
+      <div class="smile"></div>
+    </div>
+  </div>
+  <p class="video-caption">
+    See—even on Raksha Bandhan, the great chase never stops! 🏃‍♂️🏃‍♀️
+  </p>
+</div>
+
+<div class="message-box" id="messageBox">
+  Click the button below for a special Raksha Bandhan message!
+</div>
+
+<button onclick="showMessage()">Show Message</button>
+
+<script>
+  function showMessage() {
+    const messages = [
+      // Sweet
+      "Honey, you are my sunshine on every cloudy day. I promise to always protect you.",
+      "Noni, your smile lights up my world. Wishing you success and happiness always.",
+      "To my lovable sisters—thank you for being my strength and joy! Happy Raksha Bandhan!",
+      "May our bond of love grow stronger with every passing year. Love you both deeply!",
+      // Funny
+      "Rakhi bandhan means I tie the thread, you promise to share your snacks!",
+      "Sis, thanks for always being there... and also for the endless teasing!",
+      "Noni, you’re the reason I sometimes consider running away... until you give me a Rakhi!",
+      "Honey, if you need a protector, I’m just a call away (but I might be busy!).",
+      "Remember, no matter how grown-up we get, you'll always be my cute sisters—and my hilarious rivals!",
+      "Let's make a deal: fewer pranks, more sweets this year!",
+      "Breaking news: Lavish is officially outnumbered by his sisters today!",
+      "Official Rakhi rule: After the thread comes the tickle fight!",
+      "Raksha Bandhan every year: Gifts, laughter, … and running from trouble together!"
+    ];
+    let idx = Math.floor(Math.random() * messages.length);
+    document.getElementById('messageBox').innerText = messages[idx];
+  }
+</script>
+
+<footer>
+  With love from your brother, Lavish.
+</footer>
+
+</body>
+</html>
